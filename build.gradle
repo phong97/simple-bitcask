@@ -1,23 +1,38 @@
 plugins {
-    id 'application' // <1>
+    id 'java' 
+    id 'application' 
 }
 
+group = 'com.bitcask'
+version = '1.0-SNAPSHOT'
+
 repositories {
-    mavenCentral() // <2>
+    mavenCentral() 
 }
 
 dependencies {
-    testImplementation libs.junit.jupiter // <3>
+    testImplementation libs.junit.jupiter 
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    implementation libs.guava // <4>
+    implementation libs.guava 
 }
 
 application {
-    mainClass = 'main.java.com.bitcask.Main' // <5>
+    mainClass = 'com.bitcask.Main' 
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.example.Main'
+    }
 }
 
 tasks.named('test') {
-    useJUnitPlatform() // <6>
+    useJUnitPlatform() 
 }

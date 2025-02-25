@@ -1,4 +1,4 @@
-package main.java.com.bitcask;
+package com.bitcask;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;

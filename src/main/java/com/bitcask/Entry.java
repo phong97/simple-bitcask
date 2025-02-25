@@ -1,4 +1,4 @@
-package main.java.com.bitcask;
+package com.bitcask;
 
 import java.nio.charset.StandardCharsets;
 
